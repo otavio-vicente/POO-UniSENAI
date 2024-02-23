@@ -1,0 +1,38 @@
+//import javax.swing.JOptionPane;
+
+public class Principal {
+	
+	public static void main(String[] args) {
+
+		int modelo, corVeiculo, anoVeiculo, velocidade;
+			
+		//Modelos: Hatch, Sedã, SUV, Esportivo
+		//Marca: Chevrolet, Ford, Nissan, Audi
+		//Cores: Prata, Preto, Branco, Cinza
+		
+		modelo = EntradaSaida.solicitaModelo();
+		corVeiculo = EntradaSaida.solicitaCor();
+		anoVeiculo = EntradaSaida.solicitaAno();
+		
+		Carro modeloDoCarro = new Carro();
+		modeloDoCarro.setModelo(modelo);
+		
+		Carro corDoCarro = new Carro();
+		corDoCarro.setCorCarro(corVeiculo);
+		
+		Carro anoDoCarro = new Carro();
+		anoDoCarro.setAno(anoVeiculo);
+		
+		CarroEsportivo velocidade = new CarroEsportivo();
+		velocidade.setVelocidade(velocidade);
+		
+		//resultadoModelo = setModelo.defineModelo(modelo);
+		//resultadoCor = car.defineCor(corVeiculo);
+
+		
+		EntradaSaida.mostraResultado(modeloDoCarro.getModelo(), corDoCarro.getCorCarro());
+		
+	}
+	
+	//Desafio 3.2. Resposta: Para que possam ser chamados sem a necessidade de criar um novo objeto
+}
