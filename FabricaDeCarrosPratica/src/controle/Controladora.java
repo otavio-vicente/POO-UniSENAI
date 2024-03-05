@@ -10,30 +10,43 @@ import visualizacao.EntradaSaida;
 public class Controladora {
 	
 	public void exibeMenu() {
-		int menu;
+		int menu, cont=0;
+		
+		menu = EntradaSaida.exibeMenu();
+		
+		int qtdCarros=0;
+		
+		if(menu == 0) {
+			qtdCarros = EntradaSaida.solicitaQtdCarros();
+		}
+		
 		do {
-			menu = EntradaSaida.exibeMenu();
 			
+			if(cont > 0) {
+				menu = EntradaSaida.exibeMenu();
+			}
+			
+			cont++;
+			
+			Fabrica fabrica = new Fabrica();
+			CarroPopular carro = new CarroPopular();
+				
 			switch(menu) {
-			case 0:
-				CarroPopular carro = new CarroPopular();
-				
-				String modelo = EntradaSaida.solicitaModelo();
-				String cor = EntradaSaida.solicitaCor();
-				int ano = EntradaSaida.solicitaAno();
-				int qtdeCarros = EntradaSaida.solicitaQtdCarros();
-				
-				ArrayList<Carro> listaDeCarros = new ArrayList<Carro>();
-				for (int i=0; i<qtdeCarros; i++) {
-					carro.setModelo(EntradaSaida.solicitaModelo());
-					carro.setCor(EntradaSaida.solicitaCor());
-					listaDeCarros.add(carro);
-				}
+			case 0:	
+
+				fabrica.fabricarCarro(carro, qtdCarros);	
 				
 				break;
 			case 1: 
+				
+				fabrica.venderCarro(carro, qtdCarros);
+				
 				break;
 			case 2:
+				
+				EntradaSaida.verInformacoes(fabrica.geraInfoCarro(carro, qtdCarros));
+				
+				
 				break;
 			case 3:
 				EntradaSaida.exibeMsgEncerraPrograma();

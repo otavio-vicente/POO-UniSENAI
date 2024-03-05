@@ -21,7 +21,7 @@ public class EntradaSaida {
 	}
 	
 	public static int solicitaAno() {
-		return Integer.parseInt(JOptionPane.showInputDialog("Informe a cor da casa: "));
+		return Integer.parseInt(JOptionPane.showInputDialog("Informe o ano do carro: "));
 	}
 	
 	public static int solicitaQtdCarros() {
@@ -30,5 +30,13 @@ public class EntradaSaida {
 	
 	public static void exibeMsgEncerraPrograma() {
 		JOptionPane.showMessageDialog(null, "O programa será encerrado!");
+	}
+	
+	public static void exibeMsgErroBusca() {
+		JOptionPane.showMessageDialog(null, "Nenhum carro com os dados informados foi encontrado.");
+	}
+	
+	public static void verInformacoes(String informacoes) {
+		JOptionPane.showMessageDialog(null, informacoes, "Informações dos carros", JOptionPane.INFORMATION_MESSAGE);
 	}
 }
